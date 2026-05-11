@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Reservation System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+  <div class="logo">✈ FlightBooker</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Flights</a>
+    <a href="#">Bookings</a>
+    <a href="#" id="contactBtn">Contact</a>
+    <button id="loginBtn" class="btn-login">Login</button>
+  </nav>
+</header>
+  <section class="search-section">
+    <h1>Search Flights</h1>
+    <form id="searchForm">
+      <input type="text" placeholder="From" required>
+      <input type="text" placeholder="To" required>
+      <input type="date" required>
+      <button type="submit" class="btn-primary">Search</button>
+    </form>
+  </section>
+  <section class="results-section" id="resultsSection">
+    <h2>Available Flights</h2>
+    <div class="flights-container" id="flightsContainer"></div>
+  </section>
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <span class="close" id="closeContact">&times;</span>
+      <h2>Customer Care</h2>
+      <h3>Indian Customer Care</h3>
+      <p>📞 +91 116 932 9333</p>
+      <p>📞 +91 116 932 9999</p>
+      <h3>International Customer Care</h3>
+      <p>🌍 +91 116 567 9333</p>
+      <p>🌍 +91 116 932 9879</p>
+    </div>
+  </div>
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content premium-login">
+      <span class="close" id="closeLogin">&times;</span>
+      <h2>Welcome Back</h2>
+      <form>
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+        <label>Password:</label>
+        <input type="password" placeholder="Enter your password" required>
+        <span id="forgotPassword" class="forgot-link">Forgot Password?</span>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+      <div class="signup-section">
+        <p>Don't have an account?</p>
+        <button type="button" id="openSignup" class="btn-signup">Sign Up</button>
+      </div>
+    </div>
+  </div>
+  <!-- Sign Up Modal -->
+  <div class="modal" id="signupModal">
+    <div class="modal-content premium-login">
+      <span class="close" id="closeSignup">&times;</span>
+      <h2>Create Account</h2>
+      <form>
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email" required>
+        <label>Password:</label>
+        <input type="password" placeholder="Create a password" required>
+        <label>Confirm Password:</label>
+        <input type="password" placeholder="Re-enter password" required>
+        <button type="submit" class="btn-primary">Sign Up</button>
+      </form>
+      <div class="signup-section">
+        <p>Already have an account?</p>
+        <button type="button" id="backToLogin" class="btn-signup">Back to Login</button>
+      </div>
+    </div>
+  </div>
+  <!-- Forgot Password Modal -->
+  <div class="modal" id="forgotModal">
+    <div class="modal-content premium-login">
+      <span class="close" id="closeForgot">&times;</span>
+      <h2>Reset Password</h2>
+      <form>
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your registered email" required>
+        <button type="submit" class="btn-primary">Reset Password</button>
+      </form>
+    </div>
+  </div>
+  <!-- Passenger Details Modal -->
+<div class="modal" id="passengerModal">
+  <div class="modal-content scrollable-modal">
+    <span class="close" id="closePassenger">&times;</span>
+    <h2>Passenger Details</h2>
+    <form id="passengerForm">
+      <label>Number of Passengers:</label>
+      <input type="number" id="numPassengers" min="1" max="6" required>
+      <div id="passengerFields" class="passenger-fields"></div>
+      <div class="contact-section">
+        <h3>Booking Contact</h3>
+        <label>Email:</label>
+        <input type="email" id="contactEmail" placeholder="Enter your email" required>
+        <label>Mobile Number:</label>
+        <input type="tel" id="contactPhone" placeholder="10-digit number" pattern="[0-9]{10}" required>
+      </div>
+      <button type="submit" class="btn-primary">Proceed to Payment</button>
+    </form>
+  </div>
+</div>
+  <!-- Payment Modal -->
+  <div class="modal" id="paymentModal">
+    <div class="modal-content">
+      <span class="close" id="closePayment">&times;</span>
+      <h2>Payment</h2>
+      <form id="paymentForm">
+        <label>Card Holder Name:</label>
+        <input type="text" placeholder="Enter Card Holder Name" required>
+        <label>Card Number:</label>
+        <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+        <label>Expiry:</label>
+        <input type="month" required>
+        <label>CVV:</label>
+        <input type="password" maxlength="3" required>
+        <button type="submit" class="btn-primary">Pay Now</button>
+      </form>
+    </div>
+  </div>
+  <!-- Booking Confirmation Modal -->
+  <div class="modal" id="confirmationModal">
+    <div class="modal-content">
+      <span class="close" id="closeConfirmation">&times;</span>
+      <h2>Booking Confirmed!</h2>
+      <p>Your flight has been successfully booked. Thank you for choosing FlightBooker ✈</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
